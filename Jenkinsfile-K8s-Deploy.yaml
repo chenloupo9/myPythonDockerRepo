@@ -1,6 +1,5 @@
 pipeline {
-    agent { 
-      label 'myslave'
+    agent any
         environment {
         //once you sign up for Docker hub, use that user_id here
         registry = "chengatloupo/compie"
@@ -12,7 +11,7 @@ pipeline {
 
         stage ('checkout') {
             steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/chenloupo9/myPythonDockerRepo']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/chenloupo9/wave-DockerRepo']]])
             }
         }
        
