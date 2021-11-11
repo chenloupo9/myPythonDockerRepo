@@ -1,0 +1,12 @@
+## 4-pre-requistes.txt
+-on the Jenkins Dashboard click on "manage Jenkins" 
+-click on "Manage Credentials" in the Security section 
+-click on "Jenkins" and then click on "Global credentials" 
+-click on "Add credentials" and add the following 
+kind=Username with password
+Username=<your-dockerhub-username> 
+Password=<your-dockerhub-password>
+ID=dockerhub
+-click "ok" 
+
+

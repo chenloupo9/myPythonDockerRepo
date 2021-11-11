@@ -1,0 +1,7 @@
+## Pre-requistes-step 3
+- Install Docker, Docker pipeline and Kubernetes Deploy in Jenkins 
+-click "Manage Jenkins"=> click "Manage Plugins" 
+-search for Docker plugin and select it and the same for the other plugins
+-after you selected the three click on "Install without restart" 
+
+

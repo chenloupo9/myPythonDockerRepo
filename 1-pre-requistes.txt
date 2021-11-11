@@ -1,0 +1,30 @@
+## Pre-requistes-step 1
+- Make sure AWS-CLI,kubectl and eksctl are installed
+- Clone the git repository
+```
+git clone https://github.com/chenloupo9/wave-DockerRepo.git
+```
+
+- Install and setup jenkins to be up and running
+```
+cd ~/wave-DockerRepo
+bash jenkins-install.sh
+```
+
+- Use awscli command to retrive the public dns of your ec2 instance
+```
+ aws ec2 describe-instances  --filters Name=tag-key,Values=Name --query "Reservations[*].Instances[*].PublicDnsName" --output text
+```
+- Copy the output the your web-browser and the port number 8080 at the end
+```
+<your-public-dns>:8080
+```
+
+- Get the initial password to unlock jenkins and copy it
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+- follow up the instructions
+Install suggested plug-ins=> create user-name and password=> click "save and finish"
+

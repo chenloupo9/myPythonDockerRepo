@@ -1,0 +1,75 @@
+## Pre-requistes-step 2
+- login to a slave node and create a jenkins user
+```
+sudo useradd -m jenkins
+sudo -u jenkins nkdir /home/jenkins/.ssh
+```
+
+- Install Docker
+```
+sudo apt-get update && sudo apt install docker.io -y
+```
+
+- Install Maven
+```
+sudo apt-get install maven -y
+```
+
+- Add jenkins to docker group
+```
+sudo usermod -aG docker jenkins
+sudo newgrp docker
+sudo systemctl daemon-reload
+```
+
+- Restart Docker service
+```
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl restart docker
+```
+
+- Add SSH Keys from Master to Slave
+on Master node run the command and copy the output
+```
+sudo cat ~/.ssh/id_rsa.pub
+```
+on the Slave node run the command and paste the output from the previews step
+```
+sudo -u jenkins vi /home/jenkins/.ssh/authorized_keys
+```
+
+- Login from master node to slave node
+```
+ssh jenkins@<slave-node-ip>
+```
+once your are successfully logged into slave node, type exit
+
+- Copy ssh-keys in master node
+```
+sudo cp ~/.ssh/known_hosts  /var/lib/jenkins/.ssh
+```
+
+- Register salve node in Jenkins
+Jenkins dashboard click "Manage Jenkins"=> click "Manage Nodes and Clouds"=> click "New Node"
+-Node name=Slave
+-Select "Permanent Agent"
+-Click ok
+-# of executors=1
+-Remote root directory=/home/jenkins
+-Launch method=Lanch agents via SSH
+-Host=<salve-node-ip>
+click on credentials
+-User-name=jenkins
+-Kind=SSH
+-Select "Enter directly" (to enter the private key of master node)
+-run the command on the Master node the copy the output
+```
+sudo cat ~/.ssh/id_rsa
+```
+-Paste the output in the empty box
+-Click save
+-Select Host key verification strategy as "manually trusted key verification strategy"
+-Click save
+-Click on launch agent..make sure it connects to agent node
+
