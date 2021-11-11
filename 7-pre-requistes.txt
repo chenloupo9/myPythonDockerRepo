@@ -6,4 +6,7 @@ kubectl get pods
 kubectl get deployments
 kubectl get services
 ```
+-copy the url for the python-app-svc service to the browser with the port number 5000
+http://<url-load-blancer>:5000
+-you should see the python application running
 

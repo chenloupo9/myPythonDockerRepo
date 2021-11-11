@@ -7,6 +7,12 @@ kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster
 -on Jenkins Dashborad click on "new item" 
 -enter the name of the item (you can enter any name, in this case i celled it myK8SDeployJob) 
 -click on "Pipelne" to specifiy the type of job and click "ok"
+##OPTIONAL!##
+you can configure Jenkins to retrive the pipeline from the Source Control Management (aks github for this case)
+-select the "Poll SCM" box
+-under schedule set field to define when it will run
+you can click on the ? for help to set it up
+##OPTIONAL!!##
 -scroll down under Pipeline in Definition select "Pipeline script" 
 -copy the contect of the jenkinsfile-K8S-Deploy.yaml and paste it
 ##NOTE!##
