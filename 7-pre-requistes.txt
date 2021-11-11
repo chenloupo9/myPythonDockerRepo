@@ -1,0 +1,9 @@
+## 7-pre-requistes.txt
+-verify the deployments to our eks-cluster were successful 
+-run to following command on the master-jenkins
+```
+kubectl get pods
+kubectl get deployments
+kubectl get services
+```
+

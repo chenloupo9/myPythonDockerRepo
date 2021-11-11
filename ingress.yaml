@@ -3,8 +3,12 @@ kind: Ingress
 metadata:
   name: test-ingress
 spec:
-  defaultBackend: 
-    service: 
-      name: python-app-svc 
-      port: 
-        number: 5000
+  rules: 
+    - http: 
+        paths: /
+        pathType: ImplementationSpecific 
+        backend: 
+          service: 
+            name: python-app-svc 
+            port: 
+              number: 5000

@@ -1,0 +1,18 @@
+## 6-pre-requistes.txt
+-execute the command to set a clusterrole as cluster-admin which will give you the required access
+```
+kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous
+```
+-create a pipeline in Jenkins
+-on Jenkins Dashborad click on "new item" 
+-enter the name of the item (you can enter any name, in this case i celled it myK8SDeployJob) 
+-click on "Pipelne" to specifiy the type of job and click "ok"
+-scroll down under Pipeline in Definition select "Pipeline script" 
+-copy the contect of the jenkinsfile-K8S-Deploy.yaml and paste it
+##NOTE!##
+make sure to change the following line with your dockerhub and github infromation
+registry = <yourdockerhub-user-id>/<your-repo>
+userRemoteConfigs: [[url: 'https://github.com/<your-github-username/<your-repo>']]])
+##NOTE!## 
+-click on "save" 
+-click on "Build Now"

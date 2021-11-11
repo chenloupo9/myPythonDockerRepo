@@ -1,7 +1,23 @@
 ## Pre-requistes-step 3
-- Install Docker, Docker pipeline and Kubernetes Deploy in Jenkins 
+- Install Docker, Docker pipeline and Kubernetes Continuous Deploy in Jenkins 
 -click "Manage Jenkins"=> click "Manage Plugins" 
 -search for Docker plugin and select it and the same for the other plugins
 -after you selected the three click on "Install without restart" 
+##NOTE!!##
+-we will need to downgrade the kubernetes Continuous Deploy to version 1.0.0 
+-open a new tab on the browser and navigate to https://plugins.jenkins.io/
+-search for the kubernetes Continuous Deploy 
+-click on "Releases" 
+-click the version (in our case 1.0.0) 
+This will download to the desktop a hip file 
+-on the Jenkins Dashborad click on "Manage Jenkins"
+-click "Manage Plugins" 
+-click on "Advance" 
+-scroll down to the Upload Plugin the click on "Choose File" to upload the .hip file
+-click "upload"
+-check the box "Restart Jenkins when installation is complete and no jobs are running"
+##NOTE!!##
+
+
 
 
