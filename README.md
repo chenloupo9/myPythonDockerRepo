@@ -9,4 +9,4 @@
 6) create a pipeline in Jenkins and build it
 7) verify the deployments to the cluster
 
-##This steps are a continuance for the repository wave-FinalProject##
+**This steps are a continuance for the repository wave-FinalProject**
