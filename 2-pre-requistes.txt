@@ -1,7 +1,7 @@
 ## Pre-requistes-step 2
 - Make sure Docker is installed or use the bash script 
 ```
-cd ~/wave-DockerRepo/files
+cd ~/wave-DockerRepo/files/
 bash docker-install.sh
 ```
 - Add docker group to jenkins user 
