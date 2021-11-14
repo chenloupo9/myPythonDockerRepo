@@ -1,18 +1,17 @@
-from flask import Flask, render_template
-import random
+from flask import Flask,render_template
+import socket
 
 app = Flask(__name__)
 
-# list of cat images
-images = [
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-25158-1381844793-0.gif",
-    "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/10/anigif_enhanced-buzz-11980-1381846269-1.gif"
-]
-
-@app.route('/')
+@app.route("/")
 def index():
-    url = random.choice(images)
-    return render_template('index.html', url=url)
+    try:
+        host_name = socket.gethostname()
+        host_ip = socket.gethostbyname(host_name)
+        return render_template('index.html', hostname=host_name, ip=host_ip)
+    except:
+        return render_template('error.html')
+
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host='0.0.0.0')
