@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-python-app
-        image: chengatloupo/compie:17
+        image: chengatloupo/compie:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
