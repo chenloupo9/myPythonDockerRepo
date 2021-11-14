@@ -7,7 +7,7 @@ git clone https://github.com/chenloupo9/wave-DockerRepo.git
 
 - Install and setup jenkins to be up and running
 ```
-cd ~/wave-DockerRepo
+cd ~/wave-DockerRepo/files/
 bash jenkins-install.sh
 ```
 
